@@ -39,7 +39,7 @@ let alphabetString = 'abcdefghijklmnopqrstuvwxyz';
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
-let abcArray = alphabetString.split('');    // The split method takes in a string and returns an array
+let abcArray = alphabetString.split('');     The split method takes in a string and returns an array
 console.log(abcArray);
 
 
