@@ -39,9 +39,8 @@ let alphabetString = 'abcdefghijklmnopqrstuvwxyz';
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
-
-
-
+let abcArray = alphabetString.split('');    // The split method takes in a string and returns an array
+console.log(abcArray);
 
 
 
@@ -56,7 +55,9 @@ let alphabetArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
  * Step 1: Reorganize the alphabet array from z to a (See documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
  * Step 2: Convert the elements of the array into a string (with no spaces between the letters) and print it to the console (See documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
  * 
- * 
+ alphabetArray.reverse();   
+ 
+ console.log(alphabetArray.join('')); 
 
 
 
@@ -82,6 +83,19 @@ let array1 = [1, 5, 6, 9, 10, 14];
  * ↓ YOUR CODE HERE ↓ */
 
 
+console.log("Step 1: Array1 ", array1);
+
+console.log("Step 2: 3rd element ", array1[2]);                     
+
+console.log("Step 3: Last element ", array1[array1.length - 1]);    
+
+array1.push(16, 3);   // Add 16 and 3 to array1
+
+console.log("Step 4: Updated array1 ", array1);                     
+
+console.log("Step 5: 3rd element", array1[2]);                     
+
+console.log("Step 6: Last element", array1[array1.length - 1]);     
 
 
 
@@ -101,6 +115,16 @@ Question 4: Todo List \n`);
  * 
  * ↓ YOUR CODE HERE ↓ */
 
+let myTodoList = []; // Create a variable called myTodoList that holds an empty array
+
+myTodoList.push('item1', 'item2', 'item3'); 
+console.log('Step 2: Pushed 3 items to myTodoList ', myTodoList);
+
+myTodoList.splice(1, 1); 
+console.log('Step 3: Removed second item from myTodoList ', myTodoList);
+
+let yourTodoList = ['item4', 'item5']; 
+console.log('Step 4: yourTodoList ', yourTodoList);
 
 
 
@@ -121,9 +145,16 @@ Question 5: isEven  \n`);
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
+function isEven(x) {
+    if (x % 2 === 0) {    // If the remainder of x divided by 2 is 0, then x is even
+        return true;
+    } else {              // If the remainder of x divided by 2 is not 0, then x is odd
+        return false;
+    }
+}
 
-
-
+let ourTodoList2 = myTodoList.concat(yourTodoList); 
+console.log("Step 5: solution 2 -- ourTodoList2: ", ourTodoList2);
 
 
 /* ↑ YOUR CODE HERE ↑ */
@@ -151,7 +182,13 @@ Question 6: addingMachine \n`);
  * 
  * ↓ YOUR CODE HERE ↓ */
 
-
+function addingMachine(array) {
+  let sum = 0;                                
+  for (let i = 0; i < array.length; i++) {    
+    sum += array[i];                          
+  }
+  return sum;                                
+}
 
 
 
@@ -184,6 +221,19 @@ Question 7: reverse \n`);
  * 
  * ↓ YOUR CODE HERE ↓ */
 
+function reverse(x) {                          
+    if (typeof x === 'boolean') {               
+        return !x;                              
+    } else if (typeof x === 'number') {         
+       return x.toString().split('').reverse().join('');    
+    } else if (typeof x === 'string') {         
+        return x.split('').reverse().join('');  
+    } else if (Array.isArray(x)) {              
+        return x.reverse();                     
+    } else {                                    
+        return false;                           
+    }
+}
 
 
 
@@ -218,6 +268,12 @@ Question 8: removeElements \n`);
  * ↓ YOUR CODE HERE ↓ */
 
 
+function removeElements(array) {
+    while (array.length > 0) {  
+        array.pop();            
+    }
+    return array;               
+}
 
 
 
@@ -245,7 +301,15 @@ Question 9: whichArrayIsLonger  \n`);
  * ↓ YOUR CODE HERE ↓ */
 
 
-
+function whichArrayIsLonger(array1, array2) {
+    if (array1.length > array2.length) {       
+        return array1;                          
+    } else if (array1.length < array2.length) { 
+        return array2;                          
+    } else {                                    
+        return false;                           
+    }
+}
 
 
 /* ↑ YOUR CODE HERE ↑ */
